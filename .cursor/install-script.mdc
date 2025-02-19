@@ -1,0 +1,68 @@
+---
+description: Generating Scripts to Install Developer Tooling
+globs: 
+---
+Create an installation script that follows these specifications:
+
+1. File Naming and Location:
+   - Name the file as "install_{group}_{tool}.bash"
+   - The script should be placed in a scripts directory
+   - Ensure the file uses #!/usr/bin/env bash for compatibility
+
+2. Script Structure:
+   - Start with strict error handling (set -euo pipefail)
+   - Define TOOL_NAME and GROUP_NAME variables at the top
+   - Calculate CONFIG_DIR relative to script location
+   - Include modular functions for different operations
+   - End with a main() function call
+
+3. Required Functions:
+   - log(): Timestamp-based logging function
+   - is_tool_installed(): Check if tool exists in PATH
+   - get_current_version(): Tool-specific version checking
+   - check_config_dir(): Verify config directory exists
+   - install_tool(): Tool-specific installation process
+   - upgrade_tool(): Tool-specific upgrade process
+   - main(): Primary execution flow
+
+4. Installation Logic:
+   - Check for existing config directory
+   - Verify if tool is already installed
+   - If installed: Check version and upgrade if needed
+   - If not installed: Perform fresh installation
+   - Handle both success and error states
+
+5. Code Style:
+   - Include clear comments explaining complex operations
+   - Use consistent indentation (2 or 4 spaces)
+   - Follow shellcheck guidelines
+   - Use meaningful variable names
+   - Quote all variable expansions
+
+6. Error Handling:
+   - Fail fast on any error
+   - Provide meaningful error messages
+   - Include cleanup for failed operations
+   - Check for required dependencies
+
+7. Output Format:
+   - Use structured logging with timestamps
+   - Clearly indicate installation/upgrade progress
+   - Show version information when relevant
+   - Indicate successful completion
+
+8. Platform Compatibility:
+   - Ensure script works in both bash and zsh
+   - Handle platform-specific paths and commands
+   - Use portable shell constructs
+   - Avoid system-specific assumptions
+
+Example template structure:
+
+
+
+
+
+
+
+
